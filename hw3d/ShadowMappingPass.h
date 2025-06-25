@@ -70,8 +70,8 @@ namespace Rgph
 		void Execute( Graphics& gfx ) const noxnd override
 		{
 			using namespace DirectX;
-
-			const auto pos = XMLoadFloat3( &pShadowCamera->GetPos() );
+			DirectX::XMFLOAT3 p = pShadowCamera->GetPos();
+			const auto pos = XMLoadFloat3( &p );
 
 			gfx.SetProjection( XMLoadFloat4x4( &projection ) );
 			for( size_t i = 0; i < 6; i++ )
